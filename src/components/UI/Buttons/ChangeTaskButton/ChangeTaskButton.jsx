@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const ChangeTaskButton = () => {
+const ChangeTaskButton = ({changeHandler}) => {
     return ( 
-        <button>Change</button>
+        <button onClick={changeHandler}>Change</button>
      );
 }
  
