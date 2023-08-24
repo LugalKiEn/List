@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Тестовое задание "ToDo List"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Стек технологий: React, Redux, PHP, MySQL
 
-## Available Scripts
+## Инструкция к развертыванию и запуску
 
-In the project directory, you can run:
+1. Для работы backend-части использовалась утилита [OSPanel](https://ospanel.io). Качаем, устанавливаем.
+2. После установки необходимо склонировать папку `/src/back` в папку `domains` в корневой папке утилиты.
+3. После этого можно запустить приложение (в области уведомлений должен появиться значок с красным флагом). ПКМ на него, выбираем запустить.
+4. Далее необходимо будет импортировать БД. Переходим в пункт "Дополнительно"->PHPMyAdmin, запускаем его. Данные для входа в БД:
+
+### `host: localhost`,
+### `user: root`,
+### `password: admin`,
+
+Откроется панель с доступными БД. Переходим в пункт "Импорт", закачиваем файл из папки `/src/db_backup/` и нажимаем "Импортировать". Там уже будут созданы некоторые данные для наглядности работы API.
+
+5. Теперь нужно установить все зависимости во frontend-части. Предполагается, что на компьютере уже стоит LTS-версия NodeJS. Открываем терминал, переходим в корневую папку репозитория и вводим команду:
+
+### `npm i`
+
+ждем окончания установки пакетов.
+
+6. Для запуска frontend-части вводим команду 
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+после этого можно открыть сайт по ссылке [http://localhost:3000](http://localhost:3000).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Немного о работе приложения
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Приложение позволяет создавать, редактировать, отмечать и удалять задачи и подзадачи.
 
-### `npm run build`
+Для создания новых "корневых" задач с левой стороны экрана есть кнопка `+`, открывающая форму для заполнения заголовка и описания задачи, после нажатия на кнопку `Add Task` новая запись окажется внизу списка.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Для создания же подзадач (доступно только для "корневых задач") с правой стороны от заголовка будет располагаться пункт управления задачей, в данном случае нужно нажать там кнопку `+`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Редактирование, удаление и отметка доступны для всех записей - кнопки `Change`, `Delete` и чекбокс, соответственно.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Кнопка `Save` сохраняет текущее состояние в БД.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
