@@ -4,6 +4,7 @@ import {
     DELETE_TASK,
     IS_FORM_VISIBLE,
     CURRENT_FORM_DATA,
+    LOAD_TASKS,
  } from "./types";
 
  const initialStore = {
@@ -55,6 +56,8 @@ import {
                     ...store.tasks.slice(changeTopIndex + 1)]
                 }
             }
+        case LOAD_TASKS:
+            return {...store, tasks: action.payload}
 
         case IS_FORM_VISIBLE:
             return {...store, isFormVisible: action.payload}

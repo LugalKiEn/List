@@ -4,6 +4,7 @@ import {
     DELETE_TASK,
     IS_FORM_VISIBLE,
     CURRENT_FORM_DATA,
+    LOAD_TASKS
  } from "./types";
 
 export const addTask = (payload) => ({
@@ -28,5 +29,10 @@ export const setIsFormVisible =  (payload) => ({
 
 export const setCurrentFormData =  (payload) => ({
     type: CURRENT_FORM_DATA,
+    payload: payload,
+})
+
+export const loadTasks =  (payload) => ({
+    type: LOAD_TASKS,
     payload: payload,
 })
